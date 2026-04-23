@@ -1,0 +1,103 @@
+name: Create Release
+
+env:
+  CI: true
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version (e.g. 1.2.3)"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Enable long paths in Git
+      run: git config --system core.longpaths true
+
+    - name: Enable Win32 long paths at runtime
+      shell: pwsh
+      run: reg add "HKLM\SYSTEM\CurrentControlSet\Control\FileSystem" /v LongPathsEnabled /t REG_DWORD /d 1 /f
+
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+        fetch-depth: 0
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v2
+
+    # -------------------------
+    # Prepare output structure
+    # -------------------------
+    - name: Create dist folder structure
+      shell: pwsh
+      run: |
+        $targets = @("dist_2x", "dist_4x")
+        $subdirs = @("textures")
+
+        foreach ($t in $targets) {
+          New-Item -ItemType Directory -Path $t -Force | Out-Null
+          foreach ($s in $subdirs) {
+            New-Item -ItemType Directory -Path "$t/$s" -Force | Out-Null
+          }
+        }
+
+    - name: Copy ASI files into all dist folders
+      shell: pwsh
+      run: |
+        $targets = @("dist_2x", "dist_4x")
+
+        foreach ($t in $targets) {
+          Write-Host "Copying to $t"
+
+          Copy-Item README.md "$t/textures/${{ github.event.repository.name }}_README.md" -Force
+          Copy-Item LICENSE "$t/textures/${{ github.event.repository.name }}_LICENSE" -Force
+        }
+
+    # Build Dist Folders
+    - name: Build Dist Folders
+      run: |
+        $RepoRootDir = "${{ github.workspace }}"
+        $scriptPath  = Join-Path $RepoRootDir "Build_Dist_Folders.py"
+
+        if (-not (Test-Path $scriptPath)) {
+          Write-Error "Build_Dist_Folders.py not found at $scriptPath"
+          exit 1
+        }
+
+        Write-Host "Running Build_Dist_Folders.py..."
+        py $scriptPath
+
+    # Package everything - Base
+    - name: Create 2x Upscaled release zip
+      working-directory: dist_2x
+      run: 7z a -tzip "../${{ github.event.repository.name }}_2x_AI_Upscaled_v${{ inputs.version }}.zip" *
+
+    - name: Create 4x Upscaled release zip
+      working-directory: dist_4x
+      run: 7z a -tzip "../${{ github.event.repository.name }}_4x_AI_Upscaled_v${{ inputs.version }}.zip" *
+
+    - name: Generate Release Posting
+      uses: ncipollo/release-action@v1
+      with:
+        artifacts: >
+          ${{ github.event.repository.name }}_4x_AI_Upscaled_v${{ inputs.version }}.zip,
+          ${{ github.event.repository.name }}_2x_AI_Upscaled_v${{ inputs.version }}.zip
+        token: ${{ secrets.GITHUB_TOKEN }}
+        tag: ${{ inputs.version }}
+        name: "${{ inputs.version }}"
+        draft: true
+        generateReleaseNotes: true
+        artifactErrorsFailBuild: true
