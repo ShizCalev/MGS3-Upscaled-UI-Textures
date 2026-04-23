@@ -1,18 +1,20 @@
 # MGS3 AI Upscaled UI Textures
 [![Releases](https://img.shields.io/github/v/release/ShizCalev/MGS3-Upscaled-UI-Textures)](https://github.com/ShizCalev/MGS3-Upscaled-UI-Textures/releases) [![Downloads](https://img.shields.io/github/downloads/ShizCalev/MGS3-Upscaled-UI-Textures/total)](https://github.com/ShizCalev/MGS3-Upscaled-UI-Textures/releases) ![Commits](https://img.shields.io/github/commit-activity/t/ShizCalev/MGS3-Upscaled-UI-Textures) ![License](https://img.shields.io/github/license/ShizCalev/MGS3-Upscaled-UI-Textures)
 
-[Nexus Page](https://www.nexusmods.com/metalgearsolid2mc/mods/122) || **GitHub Repo (You're already here!)**
+MGS2: [Nexus Page](https://www.nexusmods.com/metalgearsolid2mc/mods/122) || [GitHub Repo](https://github.com/ShizCalev/MGS2-Upscaled-UI-Textures)
+
+MGS3: [Nexus Page](https://www.nexusmods.com/metalgearsolid3mc/mods/191) || **GitHub Repo (You're already here!)**
 
 <br>
 
 
 
-This texture pack for the 2023 PC Master Collection version of Metal Gear Solid 2 upscales all of the game's UI and menu textures. 
+This texture pack for the 2023 PC Master Collection version of Metal Gear Solid 3 upscales all of the game's UI and menu textures. 
 
 
 *This pack is complimentary to [MGS3 Community Bugfix Compilation](https://github.com/ShizCalev/MGS3-Community-Bugfix-Compilation), which upscales all the other textures for the game!
 
-*Fully compatible with the [MGS3 Demastered (Substance Edition)](https://github.com/ShizCalev/MGS3-Demastered-Substance-Edition/) texture pack.
+*Fully compatible with the [MGS3 Demastered (Subsistence Edition)](https://github.com/ShizCalev/MGS3-Demastered-Subsistence-Edition/) texture pack.
 
 
 <br>
