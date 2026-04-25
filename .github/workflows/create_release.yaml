@@ -35,6 +35,32 @@ jobs:
         submodules: recursive
         fetch-depth: 0
 
+    - name: Verify release does not already exist
+      shell: pwsh
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        $version = "${{ inputs.version }}"
+
+        Write-Host "Checking whether release/tag already exists for version $version..."
+
+        $releaseExists = gh release view $version --repo "${{ github.repository }}" 2>$null
+
+        if ($LASTEXITCODE -eq 0) {
+          Write-Error "Release posting already exists for version $version. Bump version.h before creating a new release."
+          exit 1
+        }
+
+        $tagExists = git ls-remote --tags origin "refs/tags/$version"
+
+        if ($tagExists) {
+          Write-Error "Git tag already exists for version $version. Bump version.h before creating a new release."
+          exit 1
+        }
+
+        Write-Host "No existing release or tag found for version $version."
+
+
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v2
 
@@ -101,3 +127,27 @@ jobs:
         draft: true
         generateReleaseNotes: true
         artifactErrorsFailBuild: true
+
+
+    - name: Upload to NexusMods - MGS3 4x Upscaled UI and Menu Textures
+      uses: Nexus-Mods/upload-action@v1.0.0-beta.5
+      with:
+        api_key: ${{ secrets.NEXUSMODS_API_KEY }}
+        file_group_id: 7338848
+        display_name: "MGS3 4x Upscaled UI and Menu Textures"
+        filename: ${{ github.event.repository.name }}_4x_AI_Upscaled_v${{ inputs.version }}.zip
+        version: "${{ inputs.version }}"
+        file_category: main
+        archive_existing_file: true
+
+
+    - name: Upload to NexusMods - MGS3 2x Upscaled UI and Menu Textures
+      uses: Nexus-Mods/upload-action@v1.0.0-beta.5
+      with:
+        api_key: ${{ secrets.NEXUSMODS_API_KEY }}
+        file_group_id: 7338854
+        display_name: "MGS3 2x Upscaled UI and Menu Textures"
+        filename: ${{ github.event.repository.name }}_2x_AI_Upscaled_v${{ inputs.version }}.zip
+        version: "${{ inputs.version }}"
+        file_category: main
+        archive_existing_file: true
