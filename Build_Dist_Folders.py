@@ -36,7 +36,7 @@ UNKNOWN_PREFIXES_SEEN: set[str] = set()
 VORTEX_MODS_DIR = Path(r"C:\Vortex\metalgearsolid3mc\mods")
 
 LOCAL_SYNC_PREFIXES: dict[str, str] = {
-    #"dist_2x": "MGS3 2x Upscaled UI and Menu Textures",
+    "dist_2x": "MGS3 2x Upscaled UI and Menu Textures",
     #"dist_4x": "MGS3 4x Upscaled UI and Menu Textures",
 }
 
