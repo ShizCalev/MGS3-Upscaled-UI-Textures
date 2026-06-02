@@ -151,3 +151,4 @@ jobs:
         version: "${{ inputs.version }}"
         file_category: main
         archive_existing_file: true
+        primary_mod_manager_download: true
