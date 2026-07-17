@@ -1,9 +1,9 @@
-filename,before_hash,ctxr_hash,mipmaps,origin_folder,opacity_stripped,upscaled,upscaler_version,upscaler_type,non_upscaled_version,ctxr3_converted,npot_resized
-00040da5,be5d69c46afbb5919dbdd3d409b6c4223235f05e,f705540da0bc69c44ede7d1b6a405ea14dd1ef0a,true,Self Remade\Finalized\Dont demaster\UI\Shared,true,true,5,remarci_4x,0,false,false
-00393ebb,0b9c97f4525a208e6e10e4aa90631f8b2b7093d7,d54f19ceed829488edc618d2e057095f9af9b30f,false,Self Remade\Finalized\Self Remastered\UI\Shared\Dont Demaster\4K,false,false,0,none,5,true,false
-00454202,a5abb50baf5f5006765479f3a8f366b3124c4aeb,7b2c89b0fc287ea128c986ddb096a05333e74281,false,Self Remade\Finalized\Not Demaster Fixed\UI\Shared\4K,false,false,0,none,5,true,false
-004f0fb2,ad70fcdd19f9934a49e3d4e7e79c04505f565106,06bd137904100de0cd3f53a9dcf44ded3400e792,true,Self Remade\Finalized\Dont demaster\UI\Shared,true,true,5,remarci_4x,0,false,false
-00c8c0af,779ab38fc37dca84e81866d5f5125c805cd86e92,bea41ab4fd4ded181cecf246e092b17348f85fb4,true,Self Remade\Finalized\Dont demaster\UI\Shared,true,true,5,remarci_4x,0,false,false
-00e11a3e,4d828135cb28fdeb173df872317aa6e0dd8c7581,a58e7c3f62d2b5a34859ebca0f5bbd9c23070dde,false,Self Remade\Finalized\Not Demaster Fixed\UI\Shared\4K,false,false,0,none,5,true,false
-00f1c0b1,bf8d61c294db1017447065024c5d9509728a1d89,58d807dd5590ae8101d54bdfffda445626753ba7,true,Self Remade\Finalized\Dont demaster\UI\Shared,true,true,5,remarci_4x,0,false,false
-00fc60e2,a5abb50baf5f5006765479f3a8f366b3124c4aeb,7b2c89b0fc287ea128c986ddb096a05333e74281,false,Self Remade\Finalized\Not Demaster Fixed\UI\Shared\4K,false,false,0,none,5,true,false
+filename,before_hash,ctxr_hash,mipmaps,origin_folder,opacity_stripped,upscaled,upscaler_version,upscaler_type,non_upscaled_version,ctxr3_converted,npot_resized,dxt5
+00040da5,be5d69c46afbb5919dbdd3d409b6c4223235f05e,f705540da0bc69c44ede7d1b6a405ea14dd1ef0a,true,Self Remade\Finalized\Dont demaster\UI\Shared,true,true,5,remarci_4x,0,false,false,false
+00393ebb,0b9c97f4525a208e6e10e4aa90631f8b2b7093d7,d54f19ceed829488edc618d2e057095f9af9b30f,false,Self Remade\Finalized\Self Remastered\UI\Shared\Dont Demaster\4K,false,false,0,none,5,true,false,false
+00454202,a5abb50baf5f5006765479f3a8f366b3124c4aeb,7b2c89b0fc287ea128c986ddb096a05333e74281,false,Self Remade\Finalized\Not Demaster Fixed\UI\Shared\4K,false,false,0,none,5,true,false,false
+004f0fb2,ad70fcdd19f9934a49e3d4e7e79c04505f565106,06bd137904100de0cd3f53a9dcf44ded3400e792,true,Self Remade\Finalized\Dont demaster\UI\Shared,true,true,5,remarci_4x,0,false,false,false
+00c8c0af,779ab38fc37dca84e81866d5f5125c805cd86e92,bea41ab4fd4ded181cecf246e092b17348f85fb4,true,Self Remade\Finalized\Dont demaster\UI\Shared,true,true,5,remarci_4x,0,false,false,false
+00e11a3e,4d828135cb28fdeb173df872317aa6e0dd8c7581,a58e7c3f62d2b5a34859ebca0f5bbd9c23070dde,false,Self Remade\Finalized\Not Demaster Fixed\UI\Shared\4K,false,false,0,none,5,true,false,false
+00f1c0b1,bf8d61c294db1017447065024c5d9509728a1d89,58d807dd5590ae8101d54bdfffda445626753ba7,true,Self Remade\Finalized\Dont demaster\UI\Shared,true,true,5,remarci_4x,0,false,false,false
+00fc60e2,a5abb50baf5f5006765479f3a8f366b3124c4aeb,7b2c89b0fc287ea128c986ddb096a05333e74281,false,Self Remade\Finalized\Not Demaster Fixed\UI\Shared\4K,false,false,0,none,5,true,false,false
